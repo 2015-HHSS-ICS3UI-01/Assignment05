@@ -19,23 +19,35 @@ public class MattenenglischTranslator {
         // create a scanner to input words
         Scanner input = new Scanner(System.in);
         
-        System.out.println("Please enter the word to translate(Type END to quit the program): ");
+        System.out.print("Please enter the word to translate (Type END to quit the program): ");
         String word = input.nextLine();
-        String mattenglisch;
+        String mattenglisch = word;
+        boolean vowelY;
         
-        if(word.startsWith("a") || word.startsWith("e") || word.startsWith("i") || word.startsWith("o") || word.startsWith("u") || word.startsWith("y")){
-            mattenglisch = word + "ee";
+        if(mattenglisch.startsWith("y")){
+            vowelY = false;
+        } else{
+            vowelY = true;
+        }
+        
+        if(mattenglisch.startsWith("a") || mattenglisch.startsWith("e") || mattenglisch.startsWith("i") || mattenglisch.startsWith("o") || mattenglisch.startsWith("u")){
+            String withoutFirstVowel = mattenglisch.substring(1);
+            mattenglisch = mattenglisch + "i";
             if(word.endsWith("a") || word.endsWith("e") || word.endsWith("i") || word.endsWith("o") || word.endsWith("u") || word.endsWith("y")){
-                
+                mattenglisch = mattenglisch + "hee";
+            } else{
+                mattenglisch = mattenglisch + "ee";
             }
         } else{
-            mattenglisch = word;
-            while(!mattenglisch.startsWith("a") || !mattenglisch.startsWith("e") || !mattenglisch.startsWith("i") || !mattenglisch.startsWith("o") || !mattenglisch.startsWith("u")){
-                String first = word.substring(0, 1);
-                String last = word.substring(1);
-                mattenglisch = last + first;
+            while(!mattenglisch.startsWith("a") && !mattenglisch.startsWith("e") && !mattenglisch.startsWith("i") && !mattenglisch.startsWith("o") && !mattenglisch.startsWith("u")){
+                String upToVowel = mattenglisch.substring(0, 1);
+                String last = mattenglisch.substring(1);
+                mattenglisch = last + upToVowel;
             }
-            
+            String withoutFirstVowel = mattenglisch.substring(1);
+            mattenglisch = withoutFirstVowel;
+            mattenglisch = "i" + mattenglisch + "ee";
         }
+            System.out.println(word + " in mattenglisch is " + mattenglisch);
     }
 }
