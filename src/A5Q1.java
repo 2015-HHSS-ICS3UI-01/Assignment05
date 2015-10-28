@@ -37,7 +37,18 @@ public class A5Q1 {
                 System.out.println("Your transated word is: " + newWord);
             }
         }else{
-            
+            String newWord = word;
+            do{
+                String rotate = newWord.substring(0,1);
+                newWord = newWord.substring(1) + rotate;
+            }while(!newWord.startsWith("a") &&
+                       !newWord.startsWith("e") &&
+                       !newWord.startsWith("i") &&
+                       !newWord.startsWith("o") &&
+                       !newWord.startsWith("u") &&
+                       !newWord.startsWith("y"));
+            newWord = "i" + newWord.substring(1) + "ee";
+            System.out.println(newWord);
         }
     }
 }
