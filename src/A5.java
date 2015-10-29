@@ -30,29 +30,25 @@ public class A5 {
         //mattenenglisch
         //if word starts with a vowel
         //if word starts and ends with a vowel
-        if (mattenenglisch.startsWith("a")
-                || mattenenglisch.startsWith("e")
-                || mattenenglisch.startsWith("i")
-                || mattenenglisch.startsWith("o")
-                || mattenenglisch.startsWith("u")
-                && mattenenglisch.endsWith("a")
+        if (mattenenglisch.endsWith("a")
                 || mattenenglisch.endsWith("e")
                 || mattenenglisch.endsWith("i")
                 || mattenenglisch.endsWith("o")
                 || mattenenglisch.endsWith("u")) {
-            //add an i at the beginning 
-            String last = mattenenglisch.substring(1);
-            mattenenglisch = "i" + last + "hee";
-        } //if word starts with but doesnt end with a vowel
-        else if (mattenenglisch.startsWith("a")
+            if(mattenenglisch.startsWith("a")
                 || mattenenglisch.startsWith("e")
                 || mattenenglisch.startsWith("i")
                 || mattenenglisch.startsWith("o")
-                || mattenenglisch.startsWith("u")) {
+                || mattenenglisch.startsWith("u")){
+            //add an i at the beginning 
+            String last = mattenenglisch.substring(1);
+            mattenenglisch = "i" + last + "hee";
+            }
             //add an i at the beginning
             String lastNo2 = mattenenglisch.substring(1);
             mattenenglisch = "i" + lastNo2 + "ee";
-        } else {
+        } //if word starts with but doesnt end with a vowel
+        else {
             String first3 = mattenenglisch.substring(0, 1);
             String lastNo3 = mattenenglisch.substring(1);
             mattenenglisch = "i" + lastNo3 + first3 + "ee";
