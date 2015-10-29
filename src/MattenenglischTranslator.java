@@ -52,9 +52,6 @@ public class MattenenglischTranslator {
                 if (matte.startsWith("u")) {
                     matte = matte.replaceFirst("u", "i");
                 }
-                if (matte.startsWith("y")) {
-                    matte = matte.replaceFirst("y", "i");
-                }
                 //if a vowel is found at the end of a word then "hee" is added
                 if (matte.endsWith("a") || matte.endsWith("e") || matte.endsWith("i")
                         || matte.endsWith("o") || matte.endsWith("u") || matte.endsWith("y")) {
@@ -64,14 +61,19 @@ public class MattenenglischTranslator {
                     matte = matte + "ee";
                 }
             }//if doesnt start with vowel 
-            else {
+            else {//looks for vowels in a word
+                System.out.println(matte);
+               
+                
                 char vowel = Character.toLowerCase(matte.charAt(0));
+                
                 if (vowel == 'a' || vowel == 'e' || vowel == 'i' || vowel == 'o'
                         || vowel == 'u' || vowel == 'y') {
                     int vFound = matte.indexOf(vowel);
                     String first = matte.substring(0, vFound);
                     String last = matte.substring(vFound);
                     matte = last + first + "ee";
+                    //replaces first vowel to an "i"
                     if (matte.startsWith("a")) {
                         matte = matte.replaceFirst("a", "i");
                     }
@@ -87,22 +89,9 @@ public class MattenenglischTranslator {
                     if (matte.startsWith("u")) {
                         matte = matte.replaceFirst("u", "i");
                     }
-                    if (matte.startsWith("y")) {
-                        matte = matte.replaceFirst("y", "i");
-                    }
                 }
-
-                /*if (!matte.startsWith("a")) {
-                 int aFound = matte.indexOf("a");
-                 String first = matte.substring(0, aFound);
-                 String last = matte.substring(aFound);
-                 matte = last + first + "ee";
-                 matte = matte.replaceFirst("a", "i");
-                 }
-                
-         
-                 */
             }
+            //tells user their word in mattenenglish
             System.out.println(word + " in Mattenenglisch is " + matte);
         }
     }
