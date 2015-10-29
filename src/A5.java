@@ -20,8 +20,13 @@ public class A5 {
 
         //get the user input
         System.out.println("Please enter a word to translate(type END to quit the program): ");
-        String mattenenglisch = input.nextLine();
+        String word = input.nextLine();
+        String mattenenglisch = word;
 
+        //to end the program
+        String end = "END";
+        if (mattenenglisch.equalsIgnoreCase(end)) {
+        }
         //mattenenglisch
         //if word starts with a vowel
         //if word starts and ends with a vowel
@@ -35,16 +40,24 @@ public class A5 {
                 || mattenenglisch.endsWith("i")
                 || mattenenglisch.endsWith("o")
                 || mattenenglisch.endsWith("u")) {
-            mattenenglisch = mattenenglisch + "hee";
+            //add an i at the beginning 
+            String last = mattenenglisch.substring(1);
+            mattenenglisch = "i" + last + "hee";
+        } //if word starts with but doesnt end with a vowel
+        else if (mattenenglisch.startsWith("a")
+                || mattenenglisch.startsWith("e")
+                || mattenenglisch.startsWith("i")
+                || mattenenglisch.startsWith("o")
+                || mattenenglisch.startsWith("u")) {
             //add an i at the beginning
-            
-        } //if word doesnt end with a vowel
-        else {
-            mattenenglisch = mattenenglisch + "ee";
-            //add an i at the beginning
-            
+            String lastNo2 = mattenenglisch.substring(1);
+            mattenenglisch = "i" + lastNo2 + "ee";
+        } else {
+            String first3 = mattenenglisch.substring(0, 1);
+            String lastNo3 = mattenenglisch.substring(1);
+            mattenenglisch = "i" + lastNo3 + first3 + "ee";
         }
-        System.out.println("in mattenenglisch is: " + mattenenglisch);
+        System.out.println(word + " in mattenenglisch is " + mattenenglisch);
 
 
     }
