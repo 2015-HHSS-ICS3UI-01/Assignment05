@@ -26,70 +26,74 @@ public class MattenenglischTranslator {
 
 
             //checks the rules
-            String matte = word;
+            String matten = word;
             //translator stops if end is typed
-            if (matte.equalsIgnoreCase("end")) {
+            if (matten.equalsIgnoreCase("end")) {
                 break;
             }
             //starts with a vowel
-            if (matte.startsWith("a")
-                    || matte.startsWith("e")
-                    || matte.startsWith("i")
-                    || matte.startsWith("o")
-                    || matte.startsWith("u")) {
-                if (matte.startsWith("a")) {
-                    matte = matte.replaceFirst("a", "i");
+            if (matten.startsWith("a")
+                    || matten.startsWith("e")
+                    || matten.startsWith("i")
+                    || matten.startsWith("o")
+                    || matten.startsWith("u")) {
+                if (matten.startsWith("a")) {
+                    matten = matten.replaceFirst("a", "i");
                 }
-                if (matte.startsWith("e")) {
-                    matte = matte.replaceFirst("e", "i");
+                if (matten.startsWith("e")) {
+                    matten = matten.replaceFirst("e", "i");
                 }
-                if (matte.startsWith("i")) {
-                    matte = matte.replaceFirst("i", "i");
+                if (matten.startsWith("i")) {
+                    matten = matten.replaceFirst("i", "i");
                 }
-                if (matte.startsWith("o")) {
-                    matte = matte.replaceFirst("o", "i");
+                if (matten.startsWith("o")) {
+                    matten = matten.replaceFirst("o", "i");
                 }
-                if (matte.startsWith("u")) {
-                    matte = matte.replaceFirst("u", "i");
+                if (matten.startsWith("u")) {
+                    matten = matten.replaceFirst("u", "i");
                 }
                 //if a vowel is found at the end of a word then "hee" is added
-                if (matte.endsWith("a") || matte.endsWith("e") || matte.endsWith("i")
-                        || matte.endsWith("o") || matte.endsWith("u") || matte.endsWith("y")) {
-                    matte = matte + "hee";
+                if (matten.endsWith("a") || matten.endsWith("e") || matten.endsWith("i")
+                        || matten.endsWith("o") || matten.endsWith("u") || matten.endsWith("y")) {
+                    matten = matten + "hee";
                 }//adds "ee" if doesn't end with vowel 
                 else {
-                    matte = matte + "ee";
+                    matten = matten + "ee";
                 }
             }//if doesnt start with vowel 
             else {//looks for vowels in a word           
-                char vowel = Character.toLowerCase(matte.charAt(0));
+                char vowel = Character.toLowerCase(matten.charAt(2));
+                
                 
                 if (vowel == 'a' || vowel == 'e' || vowel == 'i' || vowel == 'o'
                         || vowel == 'u' || vowel == 'y') {
-                    int vFound = matte.indexOf(vowel);
-                    String first = matte.substring(0, vFound);
-                    String last = matte.substring(vFound);
-                    matte = last + first + "ee";
+                    int vFound = matten.indexOf(vowel);
+                    String first = matten.substring(0, vFound);
+                    String last = matten.substring(vFound);
+                    matten = last + first + "ee";
                     //replaces first vowel to an "i"
-                    if (matte.startsWith("a")) {
-                        matte = matte.replaceFirst("a", "i");
+                    if (matten.startsWith("a")) {
+                        matten = matten.replaceFirst("a", "i");
                     }
-                    if (matte.startsWith("e")) {
-                        matte = matte.replaceFirst("e", "i");
+                    if (matten.startsWith("e")) {
+                        matten = matten.replaceFirst("e", "i");
                     }
-                    if (matte.startsWith("i")) {
-                        matte = matte.replaceFirst("i", "i");
+                    if (matten.startsWith("i")) {
+                        matten = matten.replaceFirst("i", "i");
                     }
-                    if (matte.startsWith("o")) {
-                        matte = matte.replaceFirst("o", "i");
+                    if (matten.startsWith("o")) {
+                        matten = matten.replaceFirst("o", "i");
                     }
-                    if (matte.startsWith("u")) {
-                        matte = matte.replaceFirst("u", "i");
+                    if (matten.startsWith("u")) {
+                        matten = matten.replaceFirst("u", "i");
+                    }
+                    if (matten.startsWith("y")) {
+                        matten = matten.replaceFirst("y", "i");
                     }
                 }
             }
             //tells user their word in mattenenglish
-            System.out.println(word + " in Mattenenglisch is " + matte);
+            System.out.println(word + " in Mattenenglisch is " + matten);
         }
     }
 }
