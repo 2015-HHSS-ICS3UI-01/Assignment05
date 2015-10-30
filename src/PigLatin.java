@@ -21,35 +21,34 @@ public class PigLatin {
 
         System.out.println("Please enter a word");
         String word = in.nextLine();
+   
+                    
+
+        
+        if (word.startsWith("a")
+                || word.startsWith("e")
+                || word.startsWith("i")
+                || word.startsWith("o")
+                || word.startsWith("u")) {
+
+             
+
+            pigLatin = word + "hee";
+            System.out.println("In pigLatin: " + pigLatin);
+            
+        }
         
         
-       
-        
-        while(word.charAt(1) != 'i' || word.charAt(1) !='a'||word.charAt(1) != 'e'||word.charAt(1) != 'u'||word.charAt(1) != 'o' ){
+        if(word.charAt(0) != 'i' && word.charAt(0) !='a'&&word.charAt(0) != 'e'&&word.charAt(0) != 'u'&&word.charAt(0) != 'o' ){
             
             String first = word.substring(0,1);
             String last = word.substring(1);
-            String pigLatin = last + first; 
             
-            System.out.println("Piglatin: " + pigLatin);
-        }
-         if (word.startsWith("a")
-                || pigLatin.startsWith("e")
-                || pigLatin.startsWith("i")
-                || pigLatin.startsWith("o")
-                || pigLatin.startsWith("u")) {
-
-            pigLatin = pigLatin + "hee";
-            System.out.println("In pigLatin: " + pigLatin);
-        } 
-           
-
-            System.out.println("In pigLatin: " + pigLatin);
-        if(word.charAt(1) != 'i'){
-            String first = 
+              pigLatin = last + first + "ee"; 
+            
+            System.out.println("Piglatin: " + pigLatin);}
+    
     }
-        
-        
-       
 }
-}
+
+
