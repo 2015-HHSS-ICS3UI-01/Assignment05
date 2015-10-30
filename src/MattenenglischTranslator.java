@@ -61,10 +61,7 @@ public class MattenenglischTranslator {
                     matte = matte + "ee";
                 }
             }//if doesnt start with vowel 
-            else {//looks for vowels in a word
-                System.out.println(matte);
-               
-                
+            else {//looks for vowels in a word           
                 char vowel = Character.toLowerCase(matte.charAt(0));
                 
                 if (vowel == 'a' || vowel == 'e' || vowel == 'i' || vowel == 'o'
