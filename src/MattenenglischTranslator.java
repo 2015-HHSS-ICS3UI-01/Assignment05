@@ -37,6 +37,7 @@ public class MattenenglischTranslator {
                     || matten.startsWith("i")
                     || matten.startsWith("o")
                     || matten.startsWith("u")) {
+                //replaces the vowel with i unless its a y
                 if (matten.startsWith("a")) {
                     matten = matten.replaceFirst("a", "i");
                 }
@@ -61,34 +62,38 @@ public class MattenenglischTranslator {
                     matten = matten + "ee";
                 }
             }//if doesnt start with vowel 
-            else {//looks for vowels in a word           
-                char vowel = Character.toLowerCase(matten.charAt(2));
-                
-                
-                if (vowel == 'a' || vowel == 'e' || vowel == 'i' || vowel == 'o'
-                        || vowel == 'u' || vowel == 'y') {
-                    int vFound = matten.indexOf(vowel);
-                    String first = matten.substring(0, vFound);
-                    String last = matten.substring(vFound);
-                    matten = last + first + "ee";
-                    //replaces first vowel to an "i"
-                    if (matten.startsWith("a")) {
-                        matten = matten.replaceFirst("a", "i");
-                    }
-                    if (matten.startsWith("e")) {
-                        matten = matten.replaceFirst("e", "i");
-                    }
-                    if (matten.startsWith("i")) {
-                        matten = matten.replaceFirst("i", "i");
-                    }
-                    if (matten.startsWith("o")) {
-                        matten = matten.replaceFirst("o", "i");
-                    }
-                    if (matten.startsWith("u")) {
-                        matten = matten.replaceFirst("u", "i");
-                    }
-                    if (matten.startsWith("y")) {
-                        matten = matten.replaceFirst("y", "i");
+            else {//checks which position vowel is in      
+                for (int i = 0; i < matten.length(); i++) {
+                    char vowel = matten.charAt(i);
+                    //looks for vowels in a word   
+                    if (vowel == 'a' || vowel == 'e' || vowel == 'i' || vowel == 'o'
+                            || vowel == 'u' || vowel == 'y') {
+                        //takes first part until vowel and moves it to back
+                        int vFound = matten.indexOf(vowel);
+                        String first = matten.substring(0, vFound);
+                        String last = matten.substring(vFound);
+                        matten = last + first + "ee";
+                        //replaces first vowel to an "i"
+                        if (matten.startsWith("a")) {
+                            matten = matten.replaceFirst("a", "i");
+                        }
+                        if (matten.startsWith("e")) {
+                            matten = matten.replaceFirst("e", "i");
+                        }
+                        if (matten.startsWith("i")) {
+                            matten = matten.replaceFirst("i", "i");
+                        }
+                        if (matten.startsWith("o")) {
+                            matten = matten.replaceFirst("o", "i");
+                        }
+                        if (matten.startsWith("u")) {
+                            matten = matten.replaceFirst("u", "i");
+                        }
+                        if (matten.startsWith("y")) {
+                            matten = matten.replaceFirst("y", "i");
+                        }
+                        //stops checking for vowels
+                        break;
                     }
                 }
             }
