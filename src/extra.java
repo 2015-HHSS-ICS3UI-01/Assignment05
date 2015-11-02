@@ -87,6 +87,6 @@ public class extra {
                 break;
             }
     }
-    // ONE ERROR HOWEVER, IT SOMEHOW CONVERTS ALL VOWELS TO I'S FIX ASAP, ASK MR. LAMONT FOR FURTHER ASSISTANCE
+    // 
 }
 }
