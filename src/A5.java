@@ -17,15 +17,17 @@ public class A5 {
     public static void main(String[] args) {
         // input scanner
         Scanner input = new Scanner(System.in);
-
+        
         //get the user input
         System.out.println("Please enter a word to translate(type END to quit the program): ");
         String word = input.nextLine();
         String mattenenglisch = word;
-
+        
+    while () {
         //to end the program
         String end = "END";
         if (mattenenglisch.equalsIgnoreCase(end)) {
+            break;
         }
         //mattenenglisch
         //if word starts with a vowel
@@ -69,41 +71,45 @@ public class A5 {
                 String lastNo2 = mattenenglisch.substring(1);
                 mattenenglisch = "i" + lastNo2 + "ee";
             }
+
         } else { // if word starts with a consonant move all the consonants up to the first vowel to the end of the word, add ee and change the first vowel into i.
-            word.indexOf('a');
-            int a = input.nextInt();
-            word.indexOf('e');
-            int e = input.nextInt();
-            word.indexOf('i');
-            int i = input.nextInt();
-            word.indexOf('o');
-            int o = input.nextInt();
-            word.indexOf('u');
-            int u = input.nextInt();
+            String consonant = word;
 
-            //for loop??
-            if (word.charAt(1) == ('a')
-                    || word.charAt(1) == ('e')
-                    || word.charAt(1) == ('i')
-                    || word.charAt(1) == ('o')
-                    || word.charAt(1) == ('u')) {
-                String one = word.substring(1);
-            } else if(word.charAt(2) == ('a')
-                    || word.charAt(2) == ('e')
-                    || word.charAt(2) == ('i')
-                    || word.charAt(2) == ('o')
-                    || word.charAt(2) == ('u')) {
-                String two = word.substring(2);
-            } else if(word.charAt(3) == ('a')
-                    || word.charAt(3) == ('e')
-                    || word.charAt(3) == ('i')
-                    || word.charAt(3) == ('o')
-                    || word.charAt(3) == ('u')) {
-                String three = word.substring(2);
-            } 
-        } mattenenglisch = "i" + word + "ee";
+            if (consonant.charAt(1) == ('a')
+                    || consonant.charAt(1) == ('e')
+                    || consonant.charAt(1) == ('i')
+                    || consonant.charAt(1) == ('o')
+                    || consonant.charAt(1) == ('u')) {
+                String first = consonant.substring(0, 1);
+                String last = consonant.substring(2);
+                mattenenglisch = "i" + last + first + "ee";
+            } else if (consonant.charAt(2) == ('a')
+                    || consonant.charAt(2) == ('e')
+                    || consonant.charAt(2) == ('i')
+                    || consonant.charAt(2) == ('o')
+                    || consonant.charAt(2) == ('u')) {
+                String first = consonant.substring(0, 2);
+                String last = consonant.substring(3);
+                mattenenglisch = "i" + last + first + "ee";
+            } else if (consonant.charAt(3) == ('a')
+                    || consonant.charAt(3) == ('e')
+                    || consonant.charAt(3) == ('i')
+                    || consonant.charAt(3) == ('o')
+                    || consonant.charAt(3) == ('u')) {
+                String first = consonant.substring(0, 3);
+                String last = consonant.substring(4);
+                mattenenglisch = "i" + last + first + "ee";
+            } else if (consonant.charAt(4) == ('a')
+                    || consonant.charAt(4) == ('e')
+                    || consonant.charAt(4) == ('i')
+                    || consonant.charAt(4) == ('o')
+                    || consonant.charAt(4) == ('u')) {
+                String first = consonant.substring(0, 4);
+                String last = consonant.substring(5);
+                mattenenglisch = "i" + last + first + "ee";
+            }
+        }
         System.out.println(word + " in mattenenglisch is " + mattenenglisch);
-
-
+    }
     }
 }
