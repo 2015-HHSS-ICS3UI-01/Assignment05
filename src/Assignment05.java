@@ -15,7 +15,7 @@ public class Assignment05 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //create new scanner 
+        //create new scanner for user input
         Scanner input = new Scanner(System.in);
         //ask user to enter a word they would like to translate 
         System.out.println("Please enter a word to translate to matten english ");
