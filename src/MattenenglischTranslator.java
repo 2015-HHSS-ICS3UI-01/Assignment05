@@ -20,9 +20,9 @@ public class MattenenglischTranslator {
         // it will first ask what word in which the user wants to translate
         // and then displays the answer
         
-        // the vowel y will be treated as long as it is not the first letter (a consonant) than it is a vowel
-        // if y is a consonant, but not at the start, then a vowel will likely be before it therefore 
-        // the y will not be touched also y at the end of a word is always a vowel
+        // the vowel "y" will be treated as long as it is not the first letter (a consonant) than it is a vowel
+        // if "y" is a consonant, but not at the start, then a vowel will likely be before it therefore 
+        // the "y" will not be touched also "y" at the end of a word is always a vowel
         
         // create a scanner to input words
         Scanner input = new Scanner(System.in);
@@ -47,7 +47,7 @@ public class MattenenglischTranslator {
                 // convert user input to lower case
                 word = word.toLowerCase();
                 
-                // if the word starts with any vowel not including y then it will be treated as follows
+                // if the word starts with any vowel not including "y" then it will be treated as follows
                 if(  word.startsWith("a") || word.startsWith("e") || word.startsWith("i") ||
                      word.startsWith("o") || word.startsWith("u")){
 
