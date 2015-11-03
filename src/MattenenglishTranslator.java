@@ -24,6 +24,7 @@ public class MattenenglishTranslator {
             String matten = input.nextLine();
             String matten2 = matten;
             
+            //if user enters 'END' to quit program
             if(matten.equalsIgnoreCase("END")){
                 break;
             }
