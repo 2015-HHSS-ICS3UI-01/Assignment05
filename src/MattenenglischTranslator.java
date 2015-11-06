@@ -73,19 +73,19 @@ public class MattenenglischTranslator {
                 // NOTE: Letter "y" is treated as consonant when it's the first letter in the word
                 } else{
 
-                   // look for the first vowel in the word but skip the first character since
-                   // we know the first letter is consontant (including "y" )
-                   int vowelFoundAt = -1;
-                   for(int index = 1; index < word.length() && vowelFoundAt == -1; index = index + 1) {
-                       if (word.charAt(index) == 'a' ||  word.charAt(index) == 'e' ||
-                           word.charAt(index) == 'i' ||  word.charAt(index) == 'o' ||
-                           word.charAt(index) == 'u' ||  word.charAt(index) == 'y') {
+                    // look for the first vowel in the word but skip the first character since
+                    // we know the first letter is consontant (including "y")
+                    int vowelFoundAt = -1;
+                    for(int index = 1; index < word.length() && vowelFoundAt == -1; index = index + 1) {
+                        if (word.charAt(index) == 'a' ||  word.charAt(index) == 'e' ||
+                            word.charAt(index) == 'i' ||  word.charAt(index) == 'o' ||
+                            word.charAt(index) == 'u' ||  word.charAt(index) == 'y') {
                             // vowel has been found
                             vowelFoundAt = index;
                         } 
                     }
                     
-                   // if a vowel was found then move all consonants up to the first vowel to the end of word
+                    // if a vowel was found then move all consonants up to the first vowel to the end of word
                     if (vowelFoundAt != -1) {
                        String consonantsBeforeVowel = word.substring(0, vowelFoundAt);
                        String restAfterVowel = word.substring(vowelFoundAt + 1);
