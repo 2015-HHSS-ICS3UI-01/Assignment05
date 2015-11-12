@@ -61,7 +61,7 @@ public class Assigment5 {
                     || !pLat.startsWith("o")
                     || !pLat.startsWith("u")) {
 
-                //grabs tthe location of each letter 
+                //grabs the location of each letter 
                 int findA = pLat.indexOf("a");
                 int findE = pLat.indexOf("e");
                 int findI = pLat.indexOf("i");
@@ -80,32 +80,42 @@ public class Assigment5 {
                 if (findI == -1) {
                     findI = 100000000;
                 }
+                if(findO == -1){
+                    findO = 100000000;
+                }
                 if (findU == -1) {
                     findU = 100000000;
                 }
 
 
-                //if a is in the word,and occurs before the other voewls the word is choped there and the translate rules applyed 
+                //if 'a' is in the word,and occurs before the other voewls the word is choped there and the translate rules applyed 
                 if (findA != 100000000) {
-                    if ((findA < findE)
-                            || findA < findI
-                            || findA < findO
-                            || findA < findU) {
-                    String firstA = pLat.substring(0,findA);
-                    String lastA = pLat.substring(findA);
-                    
-             
-                    pLat = "i" + lastA + firstA;
-                       
-                     System.out.println(pLat);
+                    if (findA < findE) {
+                        if (findA < findI) {
+                            if (findA < findO) {
+                                if (findA < findU) {
+
+                                    String firstA = pLat.substring(0, findA);
+                                    String lastA = pLat.substring(findA);
+
+                                    
+                                    pLat = lastA + firstA;
+                                    replaceA = pLat.startsWith("a")
+                                    
+                                }
+                            }
+                        }
                     }
 
 
                 }
 
+                if (findE != 100000000) {
+                }
+
 
 
             }
-        }
+        System.out.println(pLat);}
     }
 }
