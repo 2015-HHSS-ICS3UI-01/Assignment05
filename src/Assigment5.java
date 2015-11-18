@@ -100,7 +100,8 @@ public class Assigment5 {
 
                                     
                                     pLat = lastA + firstA;
-                                    replaceA = pLat.startsWith("a")
+                                    pLat = pLat.replaceFirst("a","i");
+                                    System.out.println(pLat);
                                     
                                 }
                             }
