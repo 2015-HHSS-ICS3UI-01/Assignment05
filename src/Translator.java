@@ -25,7 +25,7 @@ public class Translator {
         while (!word.equals("END")) {
             System.out.println("Please enter a word to translate(Type END to quit the program): ");
             word = in.nextLine();
-
+        //make statement for if word starts with a vowel
             if (word.startsWith("a") 
                     || word.startsWith("e") 
                     || word.startsWith("i") 
@@ -33,6 +33,7 @@ public class Translator {
                     || word.startsWith("u")) {
                 String latinvowel = word.replace("" + word.charAt(0), "i");
 
+                //make statement for if word ends with a vowel
                 if (word.endsWith("a") 
                         || word.endsWith("e") 
                         || word.endsWith("i") 
@@ -44,7 +45,8 @@ public class Translator {
                     latinvowel = latinvowel + "ee";
                 }
                 System.out.println(word + " in Mattenenglisch is " + latinvowel);
-
+                
+            //create loop to count up to the first vowel in the word
             } else {
                 int length = word.length();
                 for (int i = 0; i < length; i = i + 1) {
@@ -54,13 +56,15 @@ public class Translator {
                             ||(word.charAt(i) == 'o')
                             ||(word.charAt(i) == 'u')
                             ||(word.charAt(i) == 'y')) {
-
+                        
+                        //create strings for before the vowel and after the vowel
                         String beforevowel = word.substring(0, i);
                         String aftervowel = word.substring(i+1);
                        
 
                         aftervowel = ("i" + aftervowel + beforevowel + "ee");
-
+                        
+                        //output final sentance
                         System.out.println(word + " in Mattenenglisch is " + aftervowel);
                         break;
                     }
