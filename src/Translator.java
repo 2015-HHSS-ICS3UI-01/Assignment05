@@ -27,7 +27,7 @@ public class Translator {
             String pig = eng;
             while (!pig.endsWith("ee")) {
                 while (!pig.startsWith("a") && !pig.startsWith("e") && !pig.startsWith("i") && !pig.startsWith("o") && !pig.startsWith("u") && !pig.startsWith("y")) {
-                    wrd = pig.substring(0,1) + wrd;
+                    wrd = pig.substring(0,1);
                 }
                 pig = pig + "ee";
             }
