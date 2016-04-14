@@ -40,7 +40,7 @@ public class Translator {
             x = pig.length();                                           //checks length
             pig = pig.substring(1, x);                                  //deletes first letter
             pig = "i" + pig;                                            //replaces first letter with i
-            if (pig.endsWith("a") || pig.endsWith("e") || pig.endsWith("i") || pig.endsWith("o") || pig.endsWith("u")) {                       //if the word starts with a vowel and ends in h
+            if (pig.endsWith("a") || pig.endsWith("e") || pig.endsWith("i") || pig.endsWith("o") || pig.endsWith("u")) {                       //if the word ends in a vowel
                 pig = pig + "hee";                                          //adds hee
             } else {
                 pig = pig + "ee";                                           //adds ee
