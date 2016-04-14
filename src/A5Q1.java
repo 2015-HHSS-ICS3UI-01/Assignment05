@@ -21,21 +21,57 @@ public class A5Q1 {
         //Ask user to input the word wished to be translated
         System.out.println("Please enter a word to translate in matten English.");
         String word = input.nextLine();
-        //Saving the vowels
-        if (word.startsWith("a") || word.startsWith("e") || word.startsWith("i") || word.startsWith("o") || word.startsWith("u") || word.startsWith("y")) {
-            word = word.replaceFirst("a", "i");
-            if (word.startsWith("e")) {
-                word = word.replaceFirst("e", "i");
-            } else {
-                word = word.replace("e", "i");
-            }
-            word = word.replace("i", "i");
-            word = word.replace("o", "i");
-            word = word.replace("u", "i");
-            word = word.replace("y", "i");
-        }
-        System.out.println("Your word translated is " + word);
+        StringBuilder sBuilder = new StringBuilder(word);
 
-        //if(word.contains("a") || word.contains("e") || word.contains("a") || word.contains("a") || word.contains("a") || word.contains("a"))
+        //Saving the vowels
+        if (word.startsWith("a")
+                || word.startsWith("e")
+                || word.startsWith("i")
+                || word.startsWith("o")
+                || word.startsWith("u")
+                || word.startsWith("y")) {
+            sBuilder.deleteCharAt(0);
+            sBuilder.insert(0, "i");
+
+            // Replace every vowel with 'hee' at end
+            if (word.endsWith("a")
+                    || word.endsWith("e")
+                    || word.endsWith("i")
+                    || word.endsWith("o")
+                    || word.endsWith("u")
+                    || word.endsWith("y")) {
+                sBuilder.append("hee");
+            } else {
+                sBuilder.append("ee");
+            }
+        } else {
+
+            for (int i = 0; i < sBuilder.length(); i++) {
+                if (sBuilder.charAt(i) == 'a'
+                        || sBuilder.charAt(i) == 'e'
+                        || sBuilder.charAt(i) == 'i'
+                        || sBuilder.charAt(i) == 'o'
+                        || sBuilder.charAt(i) == 'u'
+                        || sBuilder.charAt(i) == 'y') {
+                    // Replace(start position, up to position, replace with 'i'
+                    sBuilder.replace(i, i + 1, "i");
+                    break;
+                }
+            }
+            // Look for a lowercase vowel
+            int first = sBuilder.indexOf("a" + "e" + "i" + "o" + 'u' + 'y');
+            // Found a vowel
+            if (first != -1) {
+                // Grabs all the letters up until the first L
+                String starting = sBuilder.substring(0, first);
+                // Gets rid of everything up until the L
+                sBuilder.delete(0, first);
+                // adds the starting to the end
+                sBuilder.append(starting);
+            }
+
+
+        }
+        System.out.println(sBuilder);
     }
 }
