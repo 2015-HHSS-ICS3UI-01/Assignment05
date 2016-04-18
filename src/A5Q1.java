@@ -55,7 +55,7 @@ public class A5Q1 {
                     smallest = smallestsBuilder.indexOf("u");
                 }
                 //if smallest is true and y is true and y is smaller than smallest AND y is not first letter, OR if y is true and smallest is false
-                if (smallest != -1 && smallestsBuilder.indexOf("y") != -1 && smallestsBuilder.indexOf("y") < smallest && smallestsBuilder.indexOf("y") != 0|| smallestsBuilder.indexOf("y") != -1 && smallest == -1) {
+                if (smallest != -1 && smallestsBuilder.indexOf("y") != -1 && smallestsBuilder.indexOf("y") < smallest && smallestsBuilder.indexOf("y") != 0 || smallestsBuilder.indexOf("y") != -1 && smallest == -1) {
                     smallest = smallestsBuilder.indexOf("y");
                 }
                 //we now have our smallest vowel, we then have to move all consonants up to it to the end o the word, and change it into i
@@ -76,10 +76,10 @@ public class A5Q1 {
 
 
                 if (translate.endsWith("a") || translate.endsWith("e") || translate.endsWith("i") || translate.endsWith("o") || translate.endsWith("u") || translate.endsWith("y")) {// if word ends with vowel
-                    
+
                     smallestsBuilder.append("hee");  //add hee to end of word
                 } else if (!translate.endsWith("a") || !translate.endsWith("e") || !translate.endsWith("i") || !translate.endsWith("o") || !translate.endsWith("u") || !translate.endsWith("y")) {// if word ends with consonant
-                    
+
                     smallestsBuilder.append("ee");  //add ee to end of word
                 }
 
