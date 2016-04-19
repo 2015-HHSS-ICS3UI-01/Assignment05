@@ -33,7 +33,7 @@ public class Translator {
                 pig = pig + pig.substring(0, 1);                       //adds the first letter of pig to the back
                 length = pig.length();                                       //counts the length of pig
                 pig = pig.substring(1, length);                              //removes the first letter of pig
-                if(pig.startsWith("y") && pos >= 2 || length - 1 == 2) {     //counts y as vowel as the second letter in two letter word or greater then second in a longer word
+                if(pig.startsWith("y") && pos >= 1) {                   //counts y as vowel if it is after a consonant
                     break;                                              //breaks if vowel y is found
                 }
             }
