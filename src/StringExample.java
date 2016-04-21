@@ -18,7 +18,7 @@ public class StringExample {
         // TODO code application logic here
         Scanner input = new Scanner(System.in);
 
-        // Get a wrod from the user
+        // Get a word from the user
         System.out.println("Please enter a word.");
         String word = input.nextLine();
 
