@@ -19,28 +19,19 @@ public class A5Q1 {
         Scanner input = new Scanner(System.in);
         while (true) {
             // Ask user to input the word wished to be translated
-            System.out.println("Please enter a word you wish to translate in Mattenenglish(Type END to quit the program).");
+            System.out.println("Please enter a word you wish to translate in Mattenenglisch(Type END to quit the program).");
             String word = input.nextLine();
+            String word2 = word;
             StringBuilder sBuilder = new StringBuilder(word);
             // If the user inputs 'END', then the translator ends
             if (word.equals("END")) {
                 break;
             }
-            // Delete the very first letter and add it to the end
-            int first = 1;
-            // Delete first letter than add to the end!
-            if (first != -1) {
-                // Grabs all the letters up until the first L
-                String starting = sBuilder.substring(0, first);
-                // Gets rid of everything up until the L
-                sBuilder.delete(0, first);
-                // adds the starting to the end
-                sBuilder.append(starting);
-            }
 
-            // Changing the starting vowel into an 'i'
+
+            // Find a word that begins with a vowel
             if (word.startsWith("a") || word.startsWith("e") || word.startsWith("i") || word.startsWith("o") || word.startsWith("u")) {
-
+                // Change every starting vowel in an 'i'
                 if (word.startsWith("a")) {
                     word = word.replaceFirst("a", "i");
                 } else if (word.startsWith("e")) {
@@ -56,17 +47,20 @@ public class A5Q1 {
                     sBuilder.replace(0, 1, "i");
 
                 }
-
+                // Find a word that ends with a vowel
                 if (word.endsWith("a") || word.endsWith("e") || word.endsWith("i") || word.endsWith("o") || word.endsWith("u") || word.endsWith("y")) {
+                    // Replace ending vowel with 'hee'
                     word = word + "hee";
                 } else {
+                    // If word doesn't end with a vowel, end the word with 'ee'
                     word = word + "ee";
                 }
-                System.out.println("Your word in Mattenenglish is " + word + ".");
+                // Output the translated word
+                System.out.println(word2 + " in Mattenenglisch is " + word + ".");
             } else {
 
-                // ADD 'Y' THIRD RULE! Fix up with rhythm!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                // Go through each letter of the input (NEEDED?) 
+                // Fix up with rhythm and scholar!
+                // Go through each letter of the input 
                 for (int i = 0; i < sBuilder.length(); i++) {
                     if (sBuilder.charAt(i) == 'a'
                             || sBuilder.charAt(i) == 'e'
@@ -74,26 +68,18 @@ public class A5Q1 {
                             || sBuilder.charAt(i) == 'o'
                             || sBuilder.charAt(i) == 'u'
                             || sBuilder.charAt(i) == 'y') {
+                        // Delete every letter before a vowel
+                        sBuilder.append(sBuilder.substring(0, i));
                         // Replace vowel with an 'i'
                         sBuilder.replace(i, i + 1, "i");
+                        sBuilder.delete(0, i);
                         sBuilder.append("ee");
                         break;
                     }
                 }
-
-                // Look for a lowercase vowel || DON'T THINK YOU NEED THIS!
-                int first1 = sBuilder.indexOf("a" + "e" + "i" + "o" + 'u' + 'y');
-                // Found a vowel
-                if (first1 != -1) {
-                    // Grabs all the letters up until the first vowel
-                    String starting = sBuilder.substring(0, first1);
-                    // Gets rid of everything up until the end
-                    sBuilder.delete(0, first1);
-                    // adds the starting to the end
-                    sBuilder.append(starting);
-                }
-                System.out.println("Your word in Mattenenglish is " + sBuilder + ".");
+                System.out.println(word2 + " in Mattenenglisch is " + sBuilder + ".");
             }
+            System.out.println("");
         }
     }
 }
