@@ -29,9 +29,9 @@ public class A5Q1 {
             }
 
 
-            // Find a word that begins with a vowel
+            // Checks to see if a word begins with a vowel
             if (word.startsWith("a") || word.startsWith("e") || word.startsWith("i") || word.startsWith("o") || word.startsWith("u")) {
-                // Change every starting vowel in an 'i'
+                // Change every starting vowel into an 'i'
                 if (word.startsWith("a")) {
                     word = word.replaceFirst("a", "i");
                 } else if (word.startsWith("e")) {
@@ -45,9 +45,9 @@ public class A5Q1 {
                 } else if (!word.startsWith("y")) {
                     sBuilder.append("ee");
                     sBuilder.replace(0, 1, "i");
-
                 }
-                // Find a word that ends with a vowel
+
+                // Checks to see if a word ends with a vowel
                 if (word.endsWith("a") || word.endsWith("e") || word.endsWith("i") || word.endsWith("o") || word.endsWith("u") || word.endsWith("y")) {
                     // Replace ending vowel with 'hee'
                     word = word + "hee";
@@ -59,7 +59,7 @@ public class A5Q1 {
                 System.out.println(word2 + " in Mattenenglisch is " + word + ".");
             } else {
 
-                // Fix up with rhythm and scholar!
+
                 // Go through each letter of the input 
                 for (int i = 0; i < sBuilder.length(); i++) {
                     if (sBuilder.charAt(i) == 'a'
@@ -67,19 +67,21 @@ public class A5Q1 {
                             || sBuilder.charAt(i) == 'i'
                             || sBuilder.charAt(i) == 'o'
                             || sBuilder.charAt(i) == 'u'
-                            || sBuilder.charAt(i) == 'y') {
-                        // Delete every letter before a vowel
+                            || (sBuilder.charAt(i) == 'y' && i > 0)) {
+                        // Add the starting letter(s) to the end
                         sBuilder.append(sBuilder.substring(0, i));
-                        // Replace vowel with an 'i'
+                        // Replace the vowel with an 'i'
                         sBuilder.replace(i, i + 1, "i");
+                        // Delete every letter before the vowel
                         sBuilder.delete(0, i);
+                        // Add 'ee' after the starting letter(s)
                         sBuilder.append("ee");
                         break;
                     }
                 }
+                // Output the translated word
                 System.out.println(word2 + " in Mattenenglisch is " + sBuilder + ".");
             }
-            System.out.println("");
         }
     }
 }
