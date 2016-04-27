@@ -66,8 +66,11 @@ public class A5 {
                         if (firstY < firstA || firstY < firstE || firstY < firstI || firstY < firstO || firstY < firstU) {
                             sBuilder.deleteCharAt(firstY);
                             sBuilder.insert(firstY, "i");
+                           // grabs all letters up to first 'y'
                             String starting = sBuilder.substring(0, firstY);
+                           // gets rid of everything up to first 'y' 
                             sBuilder.delete(0, firstY);
+                            // adds the starting to the end
                             sBuilder.append(starting);
                             break;
                         }
@@ -78,11 +81,8 @@ public class A5 {
                         if (firstE == -1 && firstI == -1 && firstO == -1 && firstU == -1) {
                             sBuilder.deleteCharAt(firstA);
                             sBuilder.insert(firstA, "i");
-                            // grabs all letters up to first 'a'
-                            String starting = sBuilder.substring(0, firstA);
-                            // gets rid of everything up to first 'a'
-                            sBuilder.delete(0, firstA);
-                            // adds the starting to the end
+                            String starting = sBuilder.substring(0, firstA);               
+                            sBuilder.delete(0, firstA);                         
                             sBuilder.append(starting);
                             break;
                         }
